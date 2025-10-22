@@ -37,7 +37,7 @@ export default function Asidebar() {
       <div
         className={`
           flex-1 p-8 transition-all duration-500 ease-in-out
-          ${isOpen ? "overflow-y-auto max-h-[2000px] opacity-100" : "overflow-hidden max-h-0 opacity-0"}
+      
         `}
       >
         {/* Profile Section */}
@@ -56,22 +56,21 @@ export default function Asidebar() {
         </div>
 
         {/* Detail Section */}
-        {isOpen && (
-          <div className="mt-8 animate-fadeIn">
-            {/* Tentang Saya */}
-            <div>
-              <h2 className="font-semibold text-gray-900 mb-2 text-[15px]">
-                Tentang Saya
-              </h2>
-              <p className="text-gray-600 text-sm leading-relaxed text-justify">
-                Seorang Programmer dari Bali, Indonesia yang memiliki pengalaman
-                lebih dari 3 tahun mengembangkan aplikasi web. Aplikasi yang
-                dibuat telah dipakai di lembaga pendidikan dan instansi
-                pemerintahan.
-              </p>
-            </div>
 
-            {/* Keahlian */}
+        <div className="mt-8 animate-fadeIn">
+          {/* Tentang Saya */}
+          <div>
+            <h2 className="font-semibold text-gray-900 mb-2 text-[15px]">
+              Tentang Saya
+            </h2>
+            <p className="text-gray-600 text-sm leading-relaxed text-justify">
+              Seorang Programmer dari Bali, Indonesia yang memiliki pengalaman
+              lebih dari 3 tahun mengembangkan aplikasi web. Aplikasi yang
+              dibuat telah dipakai di lembaga pendidikan dan instansi
+              pemerintahan.
+            </p>
+          </div>
+          {isOpen && (
             <div className="mt-8">
               <h2 className="font-semibold text-gray-900 mb-3 text-[15px]">
                 Keahlian
@@ -100,29 +99,30 @@ export default function Asidebar() {
                 ))}
               </div>
             </div>
-
-            {/* Kontak */}
-            <div className="mt-8 text-sm">
-              <h2 className="font-semibold text-gray-900 mb-3 text-[15px]">
-                Kontak
-              </h2>
-              <ul className="space-y-2 text-gray-600">
-                <li className="flex items-center gap-3">
-                  <i className="ri-mail-line text-lg text-gray-500"></i>
-                  <span>putu@jhonarendra.com</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <i className="ri-github-line text-lg text-gray-500"></i>
-                  <span>github.com/jhonarendra</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <i className="ri-linkedin-line text-lg text-gray-500"></i>
-                  <span>Putu Jhonarendra</span>
-                </li>
-              </ul>
-            </div>
+          )}
+          {/* Kontak */}
+                  {isOpen && (
+          <div className="mt-8 text-sm">
+            <h2 className="font-semibold text-gray-900 mb-3 text-[15px]">
+              Kontak
+            </h2>
+            <ul className="space-y-2 text-gray-600">
+              <li className="flex items-center gap-3">
+                <i className="ri-mail-line text-lg text-gray-500"></i>
+                <span>putu@jhonarendra.com</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <i className="ri-github-line text-lg text-gray-500"></i>
+                <span>github.com/jhonarendra</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <i className="ri-linkedin-line text-lg text-gray-500"></i>
+                <span>Putu Jhonarendra</span>
+              </li>
+            </ul>
           </div>
-        )}
+                  )}
+        </div>
       </div>
 
       {/* Tombol toggle (muncul hanya di layar kecil) */}
