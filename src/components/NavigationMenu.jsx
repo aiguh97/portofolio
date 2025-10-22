@@ -12,9 +12,9 @@ const NavigationMenu = () => {
       <div className="flex flex-wrap gap-1.5 mt-9 mb-9 max-w-[350px]">
         {/* Experience */}
         <Link
-          to="/experience"
+          to="/"
           className={`text-[12px] px-3 py-1 rounded-lg transition-all ${
-            isActive("/experience")
+            isActive("/")
               ? "bg-indigo-100 text-indigo-600"
               : "bg-gray-100 text-gray-700 hover:bg-gray-200"
           }`}
