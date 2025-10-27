@@ -50,6 +50,30 @@ const skillsData = [
     description:
       "PHP: Hypertext Preprocessor atau hanya PHP saja, adalah bahasa skrip dengan fungsi umum yang terutama digunakan untuk pengembangan web.",
   },
+    {
+    icon: "prisma.svg",
+    title: "React JS",
+    description:
+      "PHP: Hypertext Preprocessor atau hanya PHP saja, adalah bahasa skrip dengan fungsi umum yang terutama digunakan untuk pengembangan web.",
+  },
+      {
+    icon: "stack-auth.jpeg",
+    title: "React JS",
+    description:
+      "PHP: Hypertext Preprocessor atau hanya PHP saja, adalah bahasa skrip dengan fungsi umum yang terutama digunakan untuk pengembangan web.",
+  },
+        {
+    icon: "postgre.png",
+    title: "React JS",
+    description:
+      "PHP: Hypertext Preprocessor atau hanya PHP saja, adalah bahasa skrip dengan fungsi umum yang terutama digunakan untuk pengembangan web.",
+  },
+        {
+    icon: "neon.jpeg",
+    title: "React JS",
+    description:
+      "PHP: Hypertext Preprocessor atau hanya PHP saja, adalah bahasa skrip dengan fungsi umum yang terutama digunakan untuk pengembangan web.",
+  },
   {
     icon: "flutter.png",
     title: "React JS",
