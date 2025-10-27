@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import ImgProfile from "../assets/aris.jpeg";
+import ContactLinks from "./ContactLinks";
+import SkillsGrid from "./Skills";
 
 export default function Asidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +16,7 @@ export default function Asidebar() {
         setIsLargeScreen(true);
       } else {
         setIsLargeScreen(false);
-        setIsOpen(false); // ⛔ Tutup otomatis kalau layar kecil
+        // setIsOpen(false);
       }
     };
 
@@ -23,23 +25,20 @@ export default function Asidebar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+
+
   return (
-    <aside
-      className={`
-        w-full md:w-1/3 xl:w-1/4
-        bg-white border-r border-gray-200
-        flex flex-col
-        font-[Poppins]
-  
-      `}
-    >
-      {/* Bagian isi (scrollable hanya ketika terbuka) */}
-      <div
-        className={`
-          flex-1 p-8 transition-all duration-500 ease-in-out
-      
-        `}
-      >
+<aside
+  className="
+    w-full md:w-[385px] xl:w-[395px]
+    bg-white border-r border-gray-200
+    flex flex-col font-[Poppins]
+    flex-shrink-0
+  "
+>
+
+      {/* Bagian isi */}
+      <div className="flex-1 p-8 transition-all duration-500 ease-in-out">
         {/* Profile Section */}
         <div className="flex flex-col items-center">
           <img
@@ -56,7 +55,6 @@ export default function Asidebar() {
         </div>
 
         {/* Detail Section */}
-
         <div className="mt-8 animate-fadeIn">
           {/* Tentang Saya */}
           <div>
@@ -70,58 +68,16 @@ export default function Asidebar() {
               pemerintahan.
             </p>
           </div>
+
+          {/* Keahlian */}
           {isOpen && (
-            <div className="mt-8">
-              <h2 className="font-semibold text-gray-900 mb-3 text-[15px]">
-                Keahlian
-              </h2>
-              <div className="grid grid-cols-4 gap-3">
-                {[
-                  "html5",
-                  "css3",
-                  "js",
-                  "php",
-                  "vue",
-                  "react",
-                  "mysql",
-                  "nodejs",
-                ].map((skill) => (
-                  <div
-                    key={skill}
-                    className="border rounded-xl flex justify-center items-center p-3 shadow-sm bg-gray-50 hover:shadow-md hover:bg-white transition-all duration-200"
-                  >
-                    <img
-                      src={`/icons/${skill}.svg`}
-                      alt={skill}
-                      className="w-6 h-6 opacity-90"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
+          <SkillsGrid/>
           )}
+
           {/* Kontak */}
-                  {isOpen && (
-          <div className="mt-8 text-sm">
-            <h2 className="font-semibold text-gray-900 mb-3 text-[15px]">
-              Kontak
-            </h2>
-            <ul className="space-y-2 text-gray-600">
-              <li className="flex items-center gap-3">
-                <i className="ri-mail-line text-lg text-gray-500"></i>
-                <span>putu@jhonarendra.com</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <i className="ri-github-line text-lg text-gray-500"></i>
-                <span>github.com/jhonarendra</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <i className="ri-linkedin-line text-lg text-gray-500"></i>
-                <span>Putu Jhonarendra</span>
-              </li>
-            </ul>
-          </div>
-                  )}
+          {isOpen && (
+         <ContactLinks/>
+          )}
         </div>
       </div>
 
